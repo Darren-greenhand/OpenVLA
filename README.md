@@ -9,9 +9,9 @@
 * 其中target是 openvla的action tokenizer生成的tensor，后面llava库做了适配
 
 ps：详细实现可见笔记：https://darren-dong.notion.site/OpenVLA-LLaVA-11a471fbaea480839ee6ca55f122a187?pvs=4：笔记->
-LLaVA-OV库更改 -> 迭代式dataloader + 保存
+LLaVA-OpenVLA库详细实现 -> 迭代式dataloader + 保存
 
-理解OpenVLA仓库见：笔记 -> OpenVLA diff prismatic
+理解OpenVLA仓库见：笔记 -> OpenVLA库详解（diff Prismatic
 
 # OpenVLA: An Open-Source Vision-Language-Action Model
 
