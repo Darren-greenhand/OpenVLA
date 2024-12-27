@@ -1,3 +1,18 @@
+[Darren-greenhand/LLaVA_OpenVLA: Converted the training data of OpenVLA into general form of multimodal training instructions and then used with LLaVA-OneVision](https://github.com/Darren-greenhand/LLaVA_OpenVLA/tree/main)
+
+👆LLaVA_OpenVLA项目的part2
+
+* 实际是更改训练过程，dataloader的输出被保存，运行一次（默认mix）大概12h
+* 修改流式采样dataloader为普通dataloader
+* 去除了resize，后续llava用原始尺寸的进行anyres训练
+* 数据并行生成后序号混乱，所以又写了个脚本改格式以及编号，保证和llava数据格式一致，单个数据集连号，内部shuffle
+* 其中target是 openvla的action tokenizer生成的tensor，后面llava库做了适配
+
+ps：详细实现可见笔记：https://darren-dong.notion.site/OpenVLA-LLaVA-11a471fbaea480839ee6ca55f122a187?pvs=4：笔记->
+LLaVA-OV库更改 -> 迭代式dataloader + 保存
+
+理解OpenVLA仓库见：笔记 -> OpenVLA diff prismatic
+
 # OpenVLA: An Open-Source Vision-Language-Action Model
 
 [![arXiv](https://img.shields.io/badge/arXiv-2406.09246-df2a2a.svg?style=for-the-badge)](https://arxiv.org/abs/2406.09246)
@@ -5,7 +20,7 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.2.0-EE4C2C.svg?style=for-the-badge&logo=pytorch)](https://pytorch.org/get-started/locally/)
 [![Python](https://img.shields.io/badge/python-3.10-blue?style=for-the-badge)](https://www.python.org)
 [![License](https://img.shields.io/github/license/TRI-ML/prismatic-vlms?style=for-the-badge)](LICENSE)
- 
+
 [**Getting Started**](#getting-started) | [**Pretrained VLAs**](#pretrained-vlas) | [**Installation**](#installation) | [**Fine-Tuning OpenVLA via LoRA**](#fine-tuning-openvla-via-lora) | [**Fully Fine-Tuning OpenVLA**](#fully-fine-tuning-openvla) |
 [**Training VLAs from Scratch**](#training-vlas-from-scratch) | [**Evaluating OpenVLA**](#evaluating-openvla) | [**Project Website**](https://openvla.github.io/)
 
